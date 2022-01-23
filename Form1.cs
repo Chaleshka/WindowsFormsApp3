@@ -130,7 +130,7 @@ namespace WindowsFormsApp3
             SetColors();
         }
 
-        private async void SetColors()
+        private void SetColors()
         {
             foreach(Button b in list)
             {
@@ -141,7 +141,7 @@ namespace WindowsFormsApp3
             DateTime dateTime = new DateTime();
             List<string> TextFromFile = new List<string>();
             int stroka = 0;
-            await TextFromFile = File.ReadAllLines(path + "/Dates.ini").ToList();
+            TextFromFile = File.ReadAllLines(path + "/Dates.ini").ToList();
             stroka = (dateForm.Year - 2022) * 12 + dateForm.Month - 1;
             try
             {
