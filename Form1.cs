@@ -32,7 +32,7 @@ namespace WindowsFormsApp3
         int[] visYear = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int[] Year = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         #endregion
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/DatesAndWeeks"; 
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/DaysTask"; 
         // "/Weeks.ini", "/Dates.ini"
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -130,7 +130,7 @@ namespace WindowsFormsApp3
             SetColors();
         }
 
-        private void SetColors()
+        private async void SetColors()
         {
             foreach(Button b in list)
             {
@@ -141,13 +141,7 @@ namespace WindowsFormsApp3
             DateTime dateTime = new DateTime();
             List<string> TextFromFile = new List<string>();
             int stroka = 0;
-            using (StreamReader sr = File.OpenText(path + "/Dates.ini"))
-            {
-                while ((text = sr.ReadLine()) != null)
-                {
-                    TextFromFile.Add(text);
-                }
-            }
+            await TextFromFile = File.ReadAllLines(path + "/Dates.ini").ToList();
             stroka = (dateForm.Year - 2022) * 12 + dateForm.Month - 1;
             try
             {

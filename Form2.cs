@@ -17,7 +17,7 @@ namespace WindowsFormsApp3
     // состояние оплаты "⥏"
     public partial class Form2 : Form
     {
-        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/DatesAndWeeks";
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/DaysTask";
         // "/Weeks.ini", "/Dates.ini"
         public Form2()
         {
