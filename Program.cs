@@ -17,13 +17,11 @@ namespace WindowsFormsApp3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/DatesAndWeeks";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/DaysTask";
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
             if (!File.Exists(path + "/Dates.ini"))
                 File.Create(path + "/Dates.ini");
-            if (!File.Exists(path + "/Weeks.ini"))
-                File.Create(path + "/Weeks.ini");
             Application.Run(new Form1());
         }
     }
